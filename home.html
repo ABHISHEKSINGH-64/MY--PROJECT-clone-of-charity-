@@ -40,12 +40,11 @@
       a {
          text-decoration: none;
          color: whitesmoke;
-         font-size: 20px;
-         display: flex;
       }
 
       .navbar {
          display: flex;
+         text-decoration: none;
       }
 
       .donate {
@@ -66,11 +65,13 @@
       }
 
       .About {
-  
+         display: flex;
          gap: 17px;
          margin-left: 50px;
          margin-top: 15px;
-         font-weight: 500;
+      }
+      .About li{
+        text-decoration: none;
       }
 
       .text {
@@ -178,16 +179,16 @@
          <div style="margin: 15px 0px 0px 10px;">
             <img src="assets/logo2_footer.png.webp">
          </div>
-         <div class="About">
-         <ul style="display: flex; gap: 20px; text-decoration: none;">
-            <li><a href="home.html">Home</a></li>
-            <li><a href="who we are .html">Who we are ?</a></li>
-            <li><a href="programs.html">Programs</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-         </ul>
-         </div>
+               <div class="About">
+                   <ul style="display: flex; gap: 20px; ;">
+                       <li><a href="home.html">Home</a></li>
+                      <li><a href="who we are .html">Who we are ?</a></li>
+                       <li><a href="programs.html">Programs</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                         <li><a href="blog.html">Blog</a></li>
+                       <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+             </div>
          <div class="donate">
             <button><i class="fa-regular fa-heart" style="padding-right: 5px;"></i>Make a Donation</button>
          </div>
