@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple CRUD App</title>
+    <style>
+        body {
+            font-family: Arial;
+            width: 400px;
+            margin: 50px auto;
+        }
+        input {
+            padding: 8px;
+            width: 70%;
+        }
+        button {
+            padding: 8px;
+            margin: 5px 0;
+            cursor: pointer;
+        }
+        li {
+            margin: 8px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Student CRUD App</h2>
+
+    <input type="text" id="studentName" placeholder="Enter student name">
+    <button onclick="addStudent()">Add</button>
+
+    <ul id="studentList"></ul>
+
+<script>
+    let students = [];
+    let editIndex = -1;
+
+    function addStudent() {
+        let name = document.getElementById("studentName").value.trim();
+
+        if (name === "") {
+            alert("Please enter a name");
+            return;
+        }
+
+        if (editIndex === -1) {
+            // CREATE
+            students.push(name);
+        } else {
+            // UPDATE
+            students[editIndex] = name;
+            editIndex = -1;
+        }
+
+        document.getElementById("studentName").value = "";
+        displayStudents();
+    }
+
+    function displayStudents() {
+        let list = document.getElementById("studentList");
+        list.innerHTML = "";
+
+        students.forEach((student, index) => {
+            list.innerHTML += `
+                <li>
+                    ${student}
+                    <button onclick="editStudent(${index})">Edit</button>
+                    <button onclick="deleteStudent(${index})">Delete</button>
+                </li>
+            `;
+        });
+    }
+
+    function editStudent(index) {
+        document.getElementById("studentName").value = students[index];
+        editIndex = index;
+    }
+
+    function deleteStudent(index) {
+        students.splice(index, 1);
+        displayStudents();
+    }
+</script>
+
+</body>
+</html>
